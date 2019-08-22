@@ -1,0 +1,346 @@
+
+
+<header>
+<div class="wrapper">
+  <section class="plan-sec">
+    <div class="container">
+      <div id="wizard">
+        <div id="rootwizard">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <ul>
+                  <li class="active"><a href="#tab1" data-toggle="tab"></a></li>
+                  <li><a href="#tab2" data-toggle="tab"></a></li>
+                  <li><a href="#tab3" data-toggle="tab"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+              <div class="step-one">
+                <header class="header">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="logo">
+                        <img src="images/logo.png" alt="" />
+                      </div>
+                      <ul class="account-item">
+                        <li><a href="#">LOGIN</a></li>
+                        <li><a href="#">SIGNUP</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </header>
+              </div>
+              <span class="step-counter">Step 1 of 3</span>
+            </div>
+
+            <div class="tab-pane" id="tab2">
+              <div class="step-two">
+                <div class="step-one ">
+                  <header class="header mb-0">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="logo ">
+                          <ul class="wizard wizard-btn">
+                            <li class="previous">
+                              <a href="#" class="previous-btn"
+                                ><img src="images/left-arrow.svg" alt=""
+                              /></a>
+                            </li>
+                          </ul>
+                          <img src="images/logo.png" alt="" />
+                        </div>
+                        <ul class="account-item">
+                          <li>
+                            <a href="#"><img src="images/user.svg" alt=""/></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </header>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</header>
+
+
+
+
+
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step>
+    <div class="step-one-contant">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-holder text-center">
+            <h1>Hi, welcome :)</h1>
+            <p>Let's start to plan your trip</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-main">
+        <div class="row">
+          <div class="col-lg-12">
+            <form #plan="ngForm">
+              <div class="form-group">
+                <label><img src="images/airplane.svg" alt="" />Where to?</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="hint-text"
+                  placeholder="Hint text"
+                  ngModel
+                />
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label><img src="images/calendar.svg" alt="" />From</label>
+                    <input
+                      type="text"
+                      class="form-control datepicker"
+                      name="fromDate"
+                      placeholder="dd/mm/yyyy"
+                      ngModel
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>To</label>
+                    <input
+                      type="text"
+                      class="form-control datepicker"
+                      name="toDate"
+                      placeholder="dd/mm/yyyy"
+                      ngModel
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label
+                  ><img src="images/dollor.svg" alt="" />What is the
+                  budget?</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="$"
+                  id="count"
+                />
+                <div class="budget-main">
+                  <span id="one" onclick="change()">650$</span>
+                  <span id="two" onclick="change()">1000$</span>
+                  <span id="three" onclick="change()">1300$</span>
+                  <span id="four" onclick="change()">1500$</span>
+                  <span id="five" onclick="change()">2000$</span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="wizard wizard-btn">
+      <li class="next">
+        <button
+          class="next-btn"
+          (click)="getCalender(plan.value)"
+          matStepperNext
+        >
+          Continue
+        </button>
+      </li>
+    </ul>
+  </mat-step>
+  <mat-step>
+    <div class="example-container">
+      <div class="step-two-conatnt">
+        <div class="member-box">
+          <div class="member-head">
+            <h2 class="heading">
+              <img src="../../assets/images/users-two.svg" alt="" />Members
+            </h2>
+            <a href="#"
+              ><img src="../../assets/images/down-angle.svg" alt=""
+            /></a>
+          </div>
+          <div *ngFor="let trip of tripPlan">
+            <div
+              class="flight-data"
+              cdkDropList
+              
+              [cdkDropListData]="trip.flightName"
+              [cdkDropListConnectedTo]="[doneList]"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <h2 class="heading">
+                <img src="../../assets/images/airplane.svg" alt="" />Flights
+              </h2>
+
+              <ul
+                cdkDrag
+                class="flight-item"
+                id="example2-left"
+                *ngFor="let t of trip.flightName"
+              >
+                <li>
+                  <a href="#" class="drag-btn"
+                    ><span>{{ t.state }}</span
+                    ><span>{{ t.amount }}</span></a
+                  >
+                </li>
+              </ul>
+              <!-- <ul class="more-item ">
+                <li><a href="#">+2</a></li>
+                <li>
+                  <a href="#"
+                    >See more <img src="../../assets/images/down-angle.svg" alt=""
+                  /></a>
+                </li>
+              </ul> -->
+            </div>
+            <div
+              class="flight-data"
+              cdkDropList
+              #todoList="cdkDropList"
+              [cdkDropListData]="trip.Hotels"
+              [cdkDropListConnectedTo]="[doneList]"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <h2 class="heading">
+                <img src="../../assets/images/hotels.svg" alt="" />Hotels
+              </h2>
+              <ul
+                class="flight-item"
+                id="example2-left"
+                cdkDrag
+                *ngFor="let t of trip.Hotels"
+              >
+                <li>
+                  <a href="#" class="drag-btn"
+                    ><span>{{ t.state }}</span
+                    ><span>{{ t.amount }}</span></a
+                  >
+                </li>
+              </ul>
+              <ul class="more-item ">
+                <li><a href="#">+2</a></li>
+                <li>
+                  <a href="#"
+                    >See more
+                    <img src="../../assets/images/down-angle.svg" alt=""
+                  /></a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flight-data"
+              cdkDropList
+              #todoList="cdkDropList"
+              [cdkDropListData]="trip.Attractions"
+              [cdkDropListConnectedTo]="[doneList]"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <h2 class="heading">
+                <img src="../../assets/images/hotels.svg" alt="" />Attractions
+              </h2>
+              <ul
+                class="flight-item"
+                cdkDrag
+                id="example2-left"
+                *ngFor="let t of trip.Attractions"
+              >
+                <li>
+                  <a href="#" class="drag-btn">
+                    <span>{{ t.state }}</span
+                    ><span>{{ t.amount }}</span>
+                  </a>
+                </li>
+              </ul>
+              <!-- <ul class="more-item ">
+                <li><a href="#">+2</a></li>
+                <li>
+                  <a href="#"
+                    >See more <img src="../../assets/images/down-angle.svg" alt=""
+                  /></a>
+                </li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="day-box">
+          <div class="main-day-area">
+            <div class="btn-box">
+              <a href="#" class="first-btn"
+                ><img src="../../assets/images/arrow-left.png" alt=""
+              /></a>
+              <a href="#" class="last-btn"
+                ><img src="images/arrow-right.png" alt=""
+              /></a>
+            </div>
+            <ul class="time-items">
+              <li *ngFor="let trip of tripArrayData">
+                {{ trip.time }}
+              </li>
+            </ul>
+            
+            
+            <div class="booking-box" cdkDropListGroup>
+              <div class="main-day"  >
+                <div
+                  class="day-one"
+                  cdkDropList
+                  #doneList="cdkDropList"
+                  [cdkDropListData]="[tripObj]"
+                  [cdkDropListConnectedTo]="[todoList]"
+                  (cdkDropListDropped)="drop($event)"
+                >
+
+
+                  <div class="head-booking" *ngFor="let trip of tripObj ">
+                    <h3>{{trip.day}}</h3>
+                    <span>{{trip.date}}</span>
+                  </div>
+                  <ul class="data-main" id="example2-right" *ngFor="let trip of tripObj ">
+                    <li
+                      cdkDrag
+                      [cdkDragDisabled]="trip.rowDisable"
+                      *ngFor="let trip of trip.tripArrayData"
+                    >
+                      <a *ngIf="trip.active == true" href="#">
+                        <img src="../../assets/images/plane.svg" alt="" />
+                        <p>
+                          <span>{{ trip.state }}</span
+                          ><span></span>
+                        </p>
+                      </a>
+                      <br />
+                    </li>
+                  </ul>
+                </div>
+                <span class="total-price">800$</span>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step> </mat-step>
+</mat-horizontal-stepper>
+

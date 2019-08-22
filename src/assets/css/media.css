@@ -1,0 +1,458 @@
+
+@media (max-width: 1600px) {
+.header {
+	max-width: 1189px;
+	padding-top: 32px;
+	padding-bottom: 6px;
+}
+.logo img {
+	width: 83px;
+	height: 22px;
+}
+.logo {
+	margin: 0;
+	align-items: center;
+}
+.account-item li a {
+	font-size: 12px;
+}
+.plan-sec {
+	padding: 32px 0 0 0;
+}
+.container {
+	max-width: 1208px;
+}
+.account-item li {
+	margin-right: 28px;
+}
+.text-holder h1 {
+	font-size: 30px;
+	margin-bottom: 7px;
+}
+.text-holder p {
+	font-size: 18px;
+}
+.text-holder {
+	margin-bottom: 73px;
+}
+.form-main label {
+	margin-bottom: 9px;
+	font-size: 18px;
+}
+.form-main .form-control {
+	font-size: 15px;
+}
+.form-main .form-group {
+	margin-bottom: 14px;
+}
+.form-main {
+	max-width: 347px;
+	padding-left: 42px;
+}
+.form-main label img {
+	width: 14px;
+	left: -28px;
+}
+.budget-main span {
+	font-size: 11px;
+	padding: 3px 13px;
+}
+.plan-sec .next-btn {
+	font-size: 16px;
+	height: 40px;
+	width: 122px;
+}
+#bar {
+	width: 87.3%;
+	height: 7px;
+}
+.step-counter {
+	font-size: 10px;
+	margin-left: 13px;
+	bottom: 19px;
+}
+.logo .previous-btn img {
+	width: 12px;
+	height: auto;
+	margin-top: -12px;
+}
+.previous-btn {
+	margin-right: 20px;
+}
+.account-item img {
+	width: 12px;
+	height: 15px;
+}
+.member-box {
+	padding: 12px 15px 78px 0;
+	max-width: 240px;
+}
+.heading img {
+	width: 13px;
+	margin-right: 13px;
+}
+.heading {
+	font-size: 17px;
+}
+.member-head {
+	margin-bottom: 11px;
+	padding: 13px 23px 10px 19px;
+}
+.member-head a img {
+	width: 9px;
+}
+.flight-item {
+	padding: 0 24px 0 42px;
+}
+.flight-item li a {
+	padding: 0 12px;
+	min-height: 20px;
+	font-size: 10px;
+}
+.drag-btn {
+	padding: 0 12px;
+	min-height: 20px;
+	font-size: 10px;
+}
+.more-item li:first-child a {
+	width: 31px;
+	height: 20px;
+	font-size: 12px;
+}
+.more-item li a {
+	font-size: 12px;
+}
+.more-item li a img {
+	width: 8px;
+	margin-left: 3px;
+}
+.flight-data {
+	margin-bottom: 5px;
+	padding: 15px 0px 6px 0px;
+}
+.flight-data .heading {
+	margin-bottom: 10px;
+}
+.more-item {
+	padding: 5px 11px 0 25px;
+	margin: 8px 14px 0 15px;
+}
+.day-box {
+	width: calc(100% - 240px);
+}
+.flight-item li a img {
+	width: 11px;
+}
+.time-items {
+	padding: 98px 18px 0 18px;
+}
+.data-main li a p, .flight-item li a p {
+	padding: 0 12px;
+	min-height: 20px;
+	font-size: 10px;
+}
+.data-main li a img {
+	width: 11px !important;
+	margin-right: 11px;
+}
+.time-items li {
+	min-height: 24px;
+	font-size: 10px;
+}
+.data-main li {
+	min-height: 24px;
+}
+.step-two-conatnt {
+	max-width: 1123px;
+}
+.head-booking h3 {
+	font-size: 12px;
+}
+.head-booking span {
+	font-size: 11px;
+}
+.head-booking h3 {
+	margin-bottom: 4px;
+}
+.head-booking {
+	margin-bottom: 8px;
+	padding: 8px 0 9px;
+}
+.time-items {
+	padding: 58px 18px 0 18px;
+}
+.total-price {
+	font-size: 13px;
+}
+.day-one {
+	margin-bottom: 12px;
+	height: 493px;
+}
+.btn-box a {
+	width: 8px;
+}
+.first-btn {
+	left: 38px;
+}
+.last-btn {
+	right: 38px;
+}
+.btn-box {
+	top: 20px;
+}
+#tab3 .header {
+	max-width: 1189px;
+	padding-top: 32px;
+}
+.step-third {
+	margin-top: 54px;
+}
+.plan-box img {
+	margin-bottom: 6px;
+	width: 84px;
+}
+.plan-box span {
+	font-size: 18px;
+}
+.step-third-inner {
+	padding: 18px 20px 23px 15px;
+	max-width: 502px;
+}
+.plan-box {
+	margin-bottom: 19px;
+}
+.sunday-detail h4 {
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+.sunday-detail p {
+	padding-left: 3px;
+	font-size: 11px;
+	margin-bottom: 15px;
+}
+.trip-detail {
+	margin-bottom: 40px;
+}
+.download-btn {
+	height: 42px;
+	width: 185px;
+	font-size: 15px;
+}
+.plan-togo {
+	font-size: 12px;
+	padding-top: 21px;
+}
+.sunday-detail .last-contant br {
+	display: none;
+}
+.step-one-contant {
+	margin-top: 88px;
+}
+.step-two-conatnt {
+	margin-top: 55px;
+}
+}
+
+@media (max-width: 1199px) {
+.day-box {
+	display: block;
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.main-day-area {
+	position: relative;
+	width: 1000px;
+}
+.last-btn {
+	right: 50px;
+}
+.text-holder {
+	margin-bottom: 36px;
+}
+#bar {
+	width: 97.3%;
+	height: 6px;
+}
+.plan-sec .next-btn {
+	font-size: 13px;
+	height: 30px;
+	width: 100px;
+	bottom: 9px;
+	right: 32px;
+}
+.day-one {
+	margin-bottom: 6px;
+}
+.plan-sec {
+	padding: 17px 0 0 0;
+}
+#tab3 .header {
+	max-width: 962px;
+	padding-top: 20px;
+}
+.download-btn {
+	height: 37px;
+	width: 155px;
+	font-size: 13px;
+}
+.header {
+	margin-bottom: 25px;
+}
+.step-counter {
+	font-size: 10px;
+	margin-left: 0px;
+	bottom: 9px;
+	height: 28px;
+	width: 80px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	background-color: #9b9da2;
+	border-radius: 100px;
+}
+.step-two-conatnt {
+	margin-top: 70px;
+}
+.header {
+	padding-top: 20px;
+}
+}
+
+@media (max-width: 991px) {
+.step-two-conatnt {
+	margin-top: 58px;
+}
+}
+
+@media (max-width: 767px) {
+.plan-sec {
+	padding: 12px 0 0 0;
+}
+.text-holder h1 {
+	font-size: 23px;
+	margin-bottom: 5px;
+}
+.text-holder p {
+	font-size: 14px;
+}
+.text-holder {
+	margin-bottom: 30px;
+}
+.form-main label {
+	margin-bottom: 4px;
+	font-size: 15px;
+}
+.logo img {
+	width: 68px;
+	height: auto;
+}
+.account-item {
+	height: 16px;
+}
+.header {
+	max-width: 546px;
+	padding: 13px 30px 10px 30px;
+}
+.plan-box span {
+	font-size: 15px;
+}
+.plan-box img {
+	margin-bottom: 4px;
+	width: 66px;
+}
+#bar {
+	width: 94.5%;
+}
+#tab3 .header {
+	max-width: 546px;
+	padding-top: 13px;
+}
+.step-two-conatnt {
+	margin-top: 51px;
+}
+}
+
+@media (max-width: 575px) {
+.step-third-inner {
+	padding: 8px 20px 23px 15px;
+	max-width: 418px;
+}
+#bar {
+	width: 93.9%;
+}
+.step-one-contant {
+	margin-top: 65px;
+}
+}
+
+@media (max-width: 479px) {
+.step-two-conatnt {
+	flex-wrap: wrap;
+}
+.member-box {
+	padding: 12px 0px 0px 0;
+	max-width: 100%;
+	border: none;
+}
+.day-box {
+	margin-bottom: 50px;
+	margin-top: 30px;
+}
+.head-booking {
+	border-top: 1px solid #cacaca;
+}
+.main-day-area {
+	width: 1180px;
+}
+.header {
+	padding: 0 10px 10px 10px;
+}
+.form-main label img {
+	width: 12px;
+	left: -16px;
+}
+.form-main {
+	max-width: 270px;
+	padding-left: 26px;
+}
+.budget-main span {
+	font-size: 9px;
+	padding: 2px 9px;
+}
+.plan-sec .next-btn {
+	font-size: 10px;
+	height: 28px;
+	width: 80px;
+	right: 9px;
+}
+.time-items {
+	padding: 58px 9px 0 0px;
+}
+.first-btn {
+	left: 16px;
+}
+.step-third {
+	background-color: #fff;
+}
+.plan-togo {
+	font-size: 10px;
+	padding-top: 21px;
+}
+#tab3 .header {
+	max-width: 290px;
+}
+.form-main .form-control {
+	padding-bottom: 0;
+	height: 30px;
+}
+.trip-detail {
+	margin-bottom: 22px;
+}
+.header {
+	max-width: 290px;
+	padding-top: 13px;
+}
+}

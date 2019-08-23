@@ -1,2 +1,566 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*-----BOOTSTRAP CSS-------*/
+
+/*------------Custom Css-------------*/
+
+.center-button {
+  height: 61px;
+  width: 181px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9b9da2;
+  text-transform: uppercase;
+  color: #fff !important;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 20px;
+  position: fixed;
+
+}
+
+
+
+body {
+}
+a, button {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	text-decoration: none;
+	background: 0 0;
+	outline: 0 !important;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	-o-transition: 0.5s all;
+}
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+.wrapper {
+	overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0;
+}
+p {
+	margin-bottom: 0;
+}
+a:hover {
+	text-decoration: none;
+}
+.container {
+	max-width: 1700px;
+}
+.plan-sec {
+	padding: 51px 0 0 0;
+}
+.header {
+	background-color: #fff;
+	padding: 0 59px 19px 41px;
+	-webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.17);
+	-moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.17);
+	box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.17);
+	margin-bottom: 44px;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	max-width: 1670px;
+	left: 0;
+	top: 0;
+	padding-top: 51px;
+	margin: 0 auto;
+	right: 0;
+}
+.logo {
+	margin-bottom: 4px;
+	display: flex;
+}
+.account-item {
+	display: flex;
+	justify-content: flex-end;
+}
+.account-item li {
+	margin-right: 42px;
+}
+.account-item li a {
+	text-transform: uppercase;
+	text-decoration: underline;
+	color: #2680eb;
+	font-size: 18px;
+}
+.account-item li:last-child {
+	margin-right: 0;
+}
+.navbar {
+	padding: 0;
+	min-height: 0;
+	margin: 0;
+	border: 0;
+}
+.text-holder h1 {
+	color: #707070;
+	font-size: 45px;
+	margin-bottom: 10px;
+}
+.text-holder p {
+	color: #707070;
+	font-size: 26px;
+}
+.text-holder {
+	margin-bottom: 93px;
+}
+.form-main {
+	max-width: 511px;
+	margin: 0 auto;
+	width: 100%;
+	padding-left: 60px;
+}
+.form-main label {
+	color: #707070;
+	margin-bottom: 19px;
+	font-size: 25px;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+}
+.form-main label img {
+	width: 20px;
+	position: absolute;
+	left: -43px;
+}
+.form-main .form-control {
+	font-weight: 500;
+	color: #9e9e9e;
+	font-size: 20px;
+	padding: 0 0 10px;
+	border: none;
+	border-bottom: 2px solid #f2f2f2;
+	border-radius: 0;
+}
+.form-main .form-control:focus {
+	outline: none;
+	box-shadow: none;
+}
+ .form-main .form-control::-webkit-input-placeholder {
+ color: #9e9e9e;
+}
+.form-main .form-control::-moz-placeholder {
+ color: #9e9e9e;
+}
+.form-main .form-control:-ms-input-placeholder {
+ color: #9e9e9e;
+}
+.form-main .form-control:-moz-placeholder {
+ color: #9e9e9e;
+}
+.form-main .form-group {
+	margin-bottom: 27px;
+}
+#bar {
+	position: fixed;
+	bottom: 0;
+	width: 87.7%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	height: 11px;
+	border-radius: 0;
+	background-color: #d4d4d4;
+}
+#bar .progress-bar {
+	background-color: #707070;
+}
+.step-counter {
+	position: fixed;
+	bottom: 23px;
+	font-size: 12px;
+	color: #707070;
+	font-weight: 500;
+	margin-left: 23px;
+}
+ .next-btn {
+	height: 60px;
+	width: 181px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #9b9da2;
+	text-transform: uppercase;
+	color: #fff !important;
+	border-radius: 100px;
+	font-weight: 500;
+	font-size: 20px;
+	position: fixed;
+	bottom: 26px;
+	right: 130px;
+}
+.budget-main {
+	display: flex;
+	margin-top: 10px;
+	padding-left: 8px;
+}
+.budget-main span {
+	border: none;
+	background-color: #e0e0e0;
+	color: #636363;
+	font-size: 16px;
+	border-radius: 100px;
+	padding: 3px 14px;
+	margin-right: 7px;
+	cursor: pointer;
+}
+.previous-btn {
+	margin-right: 37px;
+}
+.logo .previous-btn img {
+	width: 18px;
+}
+.account-item img {
+	width: 20px;
+	height: 18px;
+}
+.heading {
+	font-size: 25px;
+	color: #3d3d3d;
+}
+.heading img {
+	width: 20px;
+	margin-right: 24px;
+}
+.member-head a img {
+	width: 12px;
+}
+.member-box {
+	padding: 12px 23px 62px 0;
+	width: 100%;
+	max-width: 348px;
+	border-right: 1px solid #c6c6c6;
+}
+.member-head {
+	border-radius: 4px;
+	margin-bottom: 23px;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 23px 23px 20px 19px;
+}
+.step-two-conatnt {
+	max-width: 1603px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.flight-data {
+	margin-bottom: 14px;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 27px 0px 15px 0px;
+}
+.flight-data .heading {
+	margin-bottom: 15px;
+	padding-left: 20px;
+}
+.flight-item {
+}
+.flight-item li {
+	height: 20px;
+	background-color: #fbf8f8;
+	margin-bottom: 15px;
+	border-radius: 100px;
+}
+.flight-item li a {
+	background-color: #e0e0e0;
+	padding: 0 15px;
+	border-radius: 100px;
+	margin-bottom: 0;
+	font-size: 14px;
+	color: #828282;
+	min-height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.flight-item {
+	padding: 0 36px 0 63px;
+}
+.more-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #e5e5e5;
+	padding: 8px 11px 0 48px;
+	margin: 14px 14px 0 15px;
+}
+.more-item li {
+}
+.more-item li:first-child a {
+	background-color: #e0e0e0;
+	width: 45px;
+	height: 29px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100px;
+}
+.more-item li a {
+	color: #636363;
+}
+.more-item li a img {
+	width: 12px;
+	margin-left: 4px;
+}
+.day-box {
+	position: relative;
+	width: calc(100% - 348px);
+	display: flex;
+}
+.time-items {
+	padding: 101px 24px 0 38px;
+}
+.time-items li {
+	color: #6d6d6d;
+	min-height: 35px;
+	display: flex;
+	align-items: center;
+}
+.head-booking {
+	margin-bottom: 16px;
+	text-align: center;
+	padding: 19px 0 13px;
+	border-bottom: 1px solid #cacaca;
+}
+.head-booking h3 {
+	color: #4f4f4f;
+	font-size: 18px;
+}
+.head-booking span {
+	display: block;
+	color: #5e5e5e;
+}
+.booking-box {
+    display: flex;
+    width: 100%;
+    overflow: scroll;
+}
+.main-day {
+	width: 25%;
+}
+
+.day-one {
+	margin-bottom: 26px;
+	border-left: 1px solid #cacaca;
+	border-bottom: 1px solid #cacaca;
+overflow-y: auto;
+}
+.data-main {
+}
+.data-main li {
+	min-height: 35px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+.data-main li:nth-child(odd) {
+	background-color: #fbf8f8;
+}
+.data-main li a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 13px 0 16px;
+	width: 100%;
+}
+.data-main li a img {
+	width: 20px !important;
+	margin-right: 18px;
+}
+.flight-item li a img {
+	width: 20px;
+}
+.data-main li a p {
+	background-color: #e0e0e0;
+	padding: 0 15px;
+	border-radius: 100px;
+	font-size: 14px;
+	color: #828282;
+	min-height: 29px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+.flight-item li a p {
+	background-color: #e0e0e0;
+	padding: 0 15px;
+	border-radius: 100px;
+	font-size: 14px;
+	color: #828282;
+	min-height: 29px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+.total-price {
+	color: #636363;
+	font-size: 20px;
+	font-weight: 500;
+	display: block;
+	text-align: center;
+}
+.day-one:last-child {
+	border-right: 1px solid #cacaca;
+}
+.btn-box {
+	position: absolute;
+	top: 40px;
+	width: 100%;
+}
+.btn-box a {
+	width: 10px;
+}
+.first-btn {
+	position: absolute;
+	left: 75px;
+}
+.last-btn {
+	position: absolute;
+	right: 43px;
+}
+.step-third {
+	background-color: #e4e4e4;
+	margin-top: 83px;
+	padding-bottom: 50px;
+}
+.step-third-inner {
+	padding: 18px 34px 42px 23px;
+	background-color: #fff;
+	max-width: 737px;
+	margin: 0 auto;
+	width: 100%;
+}
+.plan-box {
+	margin-bottom: 39px;
+}
+.plan-box img {
+	margin-bottom: 13px;
+}
+.plan-box span {
+	display: block;
+	font-size: 25px;
+	font-weight: 500;
+	color: #707070;
+}
+.sunday-detail h4 {
+	font-size: 16px;
+	color: #555;
+	margin-bottom: 20px;
+}
+.sunday-detail h4 span {
+	font-weight: 400;
+	color: #9e9e9e;
+	font-size: 14px;
+}
+#tab3 .header {
+	background-color: #fff;
+	left: 0;
+	top: 0;
+	width: 100%;
+	position: fixed;
+	right: 0;
+	margin: 0 auto;
+	max-width: 1670px;
+	padding-top: 51px;
+}
+.sunday-detail p {
+	padding-left: 12px;
+	color: #6d6d6d;
+	font-size: 15px;
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 23px;
+}
+.sunday-detail p img {
+	margin-right: 13px;
+	margin-top: 5px;
+}
+.sunday-detail {
+	margin-bottom: 17px;
+}
+.download-btn {
+	border: 1px solid #707070;
+	color: #707070;
+	height: 60px;
+	width: 271px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	font-size: 24px;
+	border-radius: 100px;
+	margin: 0 auto;
+}
+.download-btn:hover {
+	color: #707070;
+}
+.trip-detail {
+	margin-bottom: 60px;
+}
+.plan-togo {
+	text-align: center;
+	display: block;
+	font-size: 15px;
+	color: #707070;
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding-top: 15px;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+	border: none;
+	background: transparent;
+	font-weight: normal;
+	color: inherit;
+}
+.drag-btn {
+	background-color: #e0e0e0;
+	padding: 0 15px;
+	border-radius: 100px;
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #828282;
+	min-height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.main-day-area {
+	display: flex;
+	width: 100%;
+}
+.step-one-contant {
+	margin-top: 130px;
+}
+.step-two-conatnt {
+	margin-top: 83px;
+}
+.container {
+	max-width: 100% !important;
+}
+.header {
+	max-width: 100% !important;
+}

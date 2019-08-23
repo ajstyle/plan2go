@@ -1,84 +1,5 @@
 
-
-<header>
-<div class="wrapper">
-  <section class="plan-sec">
-    <div class="container">
-      <div id="wizard">
-        <div id="rootwizard">
-          <div class="navbar">
-            <div class="navbar-inner">
-              <div class="container">
-                <ul>
-                  <li class="active"><a href="#tab1" data-toggle="tab"></a></li>
-                  <li><a href="#tab2" data-toggle="tab"></a></li>
-                  <li><a href="#tab3" data-toggle="tab"></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="tab-pane active" id="tab1">
-              <div class="step-one">
-                <header class="header">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="logo">
-                        <img src="images/logo.png" alt="" />
-                      </div>
-                      <ul class="account-item">
-                        <li><a href="#">LOGIN</a></li>
-                        <li><a href="#">SIGNUP</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </header>
-              </div>
-              <span class="step-counter">Step 1 of 3</span>
-            </div>
-
-            <div class="tab-pane" id="tab2">
-              <div class="step-two">
-                <div class="step-one ">
-                  <header class="header mb-0">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="logo ">
-                          <ul class="wizard wizard-btn">
-                            <li class="previous">
-                              <a href="#" class="previous-btn"
-                                ><img src="images/left-arrow.svg" alt=""
-                              /></a>
-                            </li>
-                          </ul>
-                          <img src="images/logo.png" alt="" />
-                        </div>
-                        <ul class="account-item">
-                          <li>
-                            <a href="#"><img src="images/user.svg" alt=""/></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </header>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-</header>
-
-
-
-
-
-
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+<mat-horizontal-stepper  #stepper>
   <mat-step>
     <div class="step-one-contant">
       <div class="row">
@@ -165,8 +86,11 @@
       </li>
     </ul>
   </mat-step>
+
+
+  
   <mat-step>
-    <div class="example-container">
+    <div class="example-container" cdkDropListGroup>
       <div class="step-two-conatnt">
         <div class="member-box">
           <div class="member-head">
@@ -181,9 +105,7 @@
             <div
               class="flight-data"
               cdkDropList
-              
               [cdkDropListData]="trip.flightName"
-              [cdkDropListConnectedTo]="[doneList]"
               (cdkDropListDropped)="drop($event)"
             >
               <h2 class="heading">
@@ -203,82 +125,60 @@
                   >
                 </li>
               </ul>
-              <!-- <ul class="more-item ">
-                <li><a href="#">+2</a></li>
-                <li>
-                  <a href="#"
-                    >See more <img src="../../assets/images/down-angle.svg" alt=""
-                  /></a>
-                </li>
-              </ul> -->
+           
             </div>
+            
             <div
               class="flight-data"
               cdkDropList
-              #todoList="cdkDropList"
-              [cdkDropListData]="trip.Hotels"
-              [cdkDropListConnectedTo]="[doneList]"
+              [cdkDropListData]="trip.hotels"
               (cdkDropListDropped)="drop($event)"
             >
               <h2 class="heading">
-                <img src="../../assets/images/hotels.svg" alt="" />Hotels
+                <img src="../../assets/images/airplane.svg" alt="" />Hotels
               </h2>
               <ul
-                class="flight-item"
-                id="example2-left"
-                cdkDrag
-                *ngFor="let t of trip.Hotels"
-              >
-                <li>
-                  <a href="#" class="drag-btn"
-                    ><span>{{ t.state }}</span
-                    ><span>{{ t.amount }}</span></a
-                  >
-                </li>
-              </ul>
-              <ul class="more-item ">
-                <li><a href="#">+2</a></li>
-                <li>
-                  <a href="#"
-                    >See more
-                    <img src="../../assets/images/down-angle.svg" alt=""
-                  /></a>
-                </li>
-              </ul>
+              cdkDrag
+              class="flight-item"
+              id="example2-left"
+              *ngFor="let t of trip.hotels"
+            >
+              <li>
+                <a href="#" class="drag-btn"
+                  ><span>{{ t.state }}</span
+                  ><span>{{ t.amount }}</span></a
+                >
+              </li>
+            </ul>
+              
+             
             </div>
+
             <div
-              class="flight-data"
-              cdkDropList
-              #todoList="cdkDropList"
-              [cdkDropListData]="trip.Attractions"
-              [cdkDropListConnectedTo]="[doneList]"
-              (cdkDropListDropped)="drop($event)"
-            >
-              <h2 class="heading">
-                <img src="../../assets/images/hotels.svg" alt="" />Attractions
-              </h2>
-              <ul
-                class="flight-item"
-                cdkDrag
-                id="example2-left"
-                *ngFor="let t of trip.Attractions"
+            class="flight-data"
+            cdkDropList
+            [cdkDropListData]="trip.attractions"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <h2 class="heading">
+              <img src="../../assets/images/airplane.svg" alt="" />Attraction
+            </h2>
+            <ul
+            cdkDrag
+            class="flight-item"
+            id="example2-left"
+            *ngFor="let t of trip.attractions"
+          >
+            <li>
+              <a href="#" class="drag-btn"
+                ><span>{{ t.state }}</span
+                ><span>{{ t.amount }}</span></a
               >
-                <li>
-                  <a href="#" class="drag-btn">
-                    <span>{{ t.state }}</span
-                    ><span>{{ t.amount }}</span>
-                  </a>
-                </li>
-              </ul>
-              <!-- <ul class="more-item ">
-                <li><a href="#">+2</a></li>
-                <li>
-                  <a href="#"
-                    >See more <img src="../../assets/images/down-angle.svg" alt=""
-                  /></a>
-                </li>
-              </ul> -->
-            </div>
+            </li>
+          </ul>
+            
+           
+          </div>
           </div>
         </div>
 
@@ -299,23 +199,22 @@
             </ul>
             
             
-            <div class="booking-box" cdkDropListGroup>
-              <div class="main-day"  >
+            <div class="booking-box"  
+          
+         >  
+              <div class="main-day" cdkDropList  [cdkDropListData]="trip.tripArrayData "  [id]="i" (cdkDropListDropped)="drop($event)"  *ngFor="let trip of tripObj ; let i = index " >
+
                 <div
                   class="day-one"
-                  cdkDropList
-                  #doneList="cdkDropList"
-                  [cdkDropListData]="[tripObj]"
-                  [cdkDropListConnectedTo]="[todoList]"
-                  (cdkDropListDropped)="drop($event)"
+                  
                 >
 
 
-                  <div class="head-booking" *ngFor="let trip of tripObj ">
+                  <div class="head-booking" >
                     <h3>{{trip.day}}</h3>
                     <span>{{trip.date}}</span>
                   </div>
-                  <ul class="data-main" id="example2-right" *ngFor="let trip of tripObj ">
+                  <ul class="data-main" id="example2-right" >
                     <li
                       cdkDrag
                       [cdkDragDisabled]="trip.rowDisable"

@@ -1,5 +1,4 @@
 /*-----BOOTSTRAP CSS-------*/
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 /*------------Custom Css-------------*/
 
@@ -170,7 +169,7 @@ a:hover {
 	font-weight: 500;
 	margin-left: 23px;
 }
-.plan-sec .next-btn {
+ .next-btn {
 	height: 60px;
 	width: 181px;
 	display: inline-flex;
@@ -333,17 +332,19 @@ a:hover {
 	color: #5e5e5e;
 }
 .booking-box {
-	display: flex;
-	width: 87%;
+    display: flex;
+    width: 100%;
+    overflow: scroll;
 }
 .main-day {
 	width: 25%;
 }
+
 .day-one {
 	margin-bottom: 26px;
 	border-left: 1px solid #cacaca;
 	border-bottom: 1px solid #cacaca;
-	height: 725px;    overflow-y: auto;
+overflow-y: auto;
 }
 .data-main {
 }

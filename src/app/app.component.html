@@ -4,5 +4,76 @@
 <html lang="en">
 
 
-
+  <header>
+    <div class="wrapper">
+      <section class="plan-sec">
+        <div class="container">
+          <div id="wizard">
+            <div id="rootwizard">
+              <div class="navbar">
+                <div class="navbar-inner">
+                  <div class="container">
+                    <ul>
+                      <li class="active"><a href="#tab1" data-toggle="tab"></a></li>
+                      <li><a href="#tab2" data-toggle="tab"></a></li>
+                      <li><a href="#tab3" data-toggle="tab"></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                  <div class="step-one">
+                    <header class="header">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="logo">
+                            <img src="images/logo.png" alt="" />
+                          </div>
+                          <ul class="account-item">
+                            <li><a routerLink = '/login'>LOGIN</a></li>
+                            <li><a  routerLink = '/register'>SIGNUP</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </header>
+                  </div>
+                  <span class="step-counter">Step 1 of 3</span>
+                </div>
+    
+                <div class="tab-pane" id="tab2">
+                  <div class="step-two">
+                    <div class="step-one ">
+                      <header class="header mb-0">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="logo ">
+                              <ul class="wizard wizard-btn">
+                                <li class="previous">
+                                  <a href="#" class="previous-btn"
+                                    ><img src="images/left-arrow.svg" alt=""
+                                  /></a>
+                                </li>
+                              </ul>
+                              <img src="images/logo.png" alt="" />
+                            </div>
+                            <ul class="account-item">
+                              <li>
+                                <a href="#"><img src="images/user.svg" alt=""/></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </header>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    </header>
 <router-outlet></router-outlet>

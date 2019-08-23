@@ -11,6 +11,7 @@ export class PlanTripComponent implements OnInit {
 
   tripIndex = new EventEmitter() ;
   tripArrayData = [];
+  tripDayData = [] ;
   trips = [];
 dateDiff: number ;
 LIST_IDS = [] ;
@@ -20,11 +21,11 @@ tripObj = [];
     { id: 1, state: 'Costa Marina Villas', amount: 450 },
     { id: 2, state: 'United State-America', amount: 800 }
   ],
-    Hotels: [
+    hotels: [
       { id: 1, state: 'United State-Greece', amount: 660 },
       { id: 2, state: 'Apanemo', amount: 150 }
     ],
-    Attractions: [
+    attractions: [
       { id: 1, state: 'Acropolis', amount: 50 },
       { id: 2, state: 'Acropolis Museum', amount: 20 }
     ]
@@ -69,13 +70,13 @@ this.tripObj =  this.getDayArray(plan.fromDate , plan.toDate);
     const d = moment(fromDate, 'DD.MM.YYYY');
     const e = moment(toDate , 'DD.MM.YYYY');
     const tripObj = [] ;
-    for (let i = moment(d) , index = 0  ; i.isBefore(e); i.add(1 , 'days') , index++) {
+    for (let i = moment(d) , index = 0  ; i.isSameOrBefore(e); i.add(1 , 'days') , index++) {
       const weekDayName = moment(i).format('ddd');
       console.log(weekDayName);
       tripObj[index] = {
         weekDayName,
         date : i.format('DD/MM/YYYY'),
-        tripArrayData  :  this.tripArrayData
+        tripArrayData  :  [...this.tripArrayData]
       };
 
 
@@ -95,22 +96,29 @@ drop( event: CdkDragDrop<string[]> ) {
   if (event.previousContainer === event.container)  {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+
       console.log('Previous =' ,  event.previousIndex);
-      console.log('currentIndex =' ,  event.currentIndex);
+      console.log('currentIndex =' ,  event.currentIndex , );
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-      const obj = this.tripArrayData[event.currentIndex] ;
-      const timeObj = this.tripArrayData[event.currentIndex + 1] ;
+      const containerId = event.container.id ;
+      const container = this.tripObj[containerId] ;
+      console.log('fetch container' , container );
+      const obj = container.tripArrayData[event.currentIndex] ;
+      const timeObj = container.tripArrayData[event.currentIndex + 1] ;
       obj.active =  true ;
       obj.rowDisable = false ;
-      console.log(event.container.id);
+      // console.log(event.container.id);
 
-      this.tripArrayData[event.currentIndex] =  {...timeObj , ...obj} ;
-      this.tripArrayData.splice(event.currentIndex + 1 , 1);
+      container.tripArrayData[event.currentIndex] =  {...timeObj , ...obj} ;
+
+      container.tripArrayData.splice(event.currentIndex + 1 , 1);
+
+
+
     }
-  console.log(this.tripArrayData);
   }
 
 }

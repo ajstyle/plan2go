@@ -10,9 +10,16 @@
 <div class="form-main center-block ">
   <div class="row">
     <div class="col-lg-12">
+      <div *ngIf = 'loginStatus' >
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+    <mat-card>
+      <p style = 'font-size: 10px'>
+      <mat-error>{{message}}</mat-error>
+      </p>
       <form #loginForm="ngForm">
         <div class="form-group">
-          <label><img src="images/airplane.svg" alt="" />Email Id :  </label>
+          <label>Username* :  </label>
           <input
             type="text"
             class="form-control"
@@ -24,9 +31,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label><img src="images/calendar.svg" alt="" />Password</label>
+              <label>Password*</label>
               <input
-                type="text"
+                type="password"
                 class="form-control"
                 placeholder="Password"
                 name = 'password'
@@ -36,19 +43,26 @@
           </div>
         
         </div>
+       <div class="row">
+         <div class="col-md-8" >
+                  <button
+                    class="login-button"
+                    (click)="login(loginForm.value)"
+                  >
+                    Login
+                  </button>
+               
+         </div>
+         <div class="col-md-4">
+         
+            <ul class="account-item">
+                <li><a  routerLink = '/register'>Sign-up</a></li>
+              </ul>
+   </div>
+       </div>
        
-        <ul >
-          <li >
-            <button
-              class="center-button"
-              (click)="login(loginForm.value)"
-              
-            >
-              Login
-            </button>
-          </li>
-        </ul>
       </form>
+      </mat-card>
     </div>
   </div>
 </div>

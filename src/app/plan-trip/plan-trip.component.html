@@ -1,6 +1,8 @@
 
-<mat-horizontal-stepper  #stepper>
+<mat-horizontal-stepper  #stepper [linear]="isLinear">
   <mat-step>
+      <ng-template matStepLabel>Enter Information</ng-template>
+
     <div class="step-one-contant">
       <div class="row">
         <div class="col-lg-12">
@@ -10,35 +12,53 @@
           </div>
         </div>
       </div>
+      <mat-card>
       <div class="form-main">
         <div class="row">
+        
           <div class="col-lg-12">
             <form #plan="ngForm">
               <div class="form-group">
-                <label><img src="images/airplane.svg" alt="" />Where to?</label>
+                <label><img src="../../assets/images/airplane.svg" alt="" />Where to*?</label>
                 <input
                   type="text"
                   class="form-control"
                   name="hint-text"
                   placeholder="Hint text"
                   ngModel
+                  required
+                  #hintText="ngModel" 
+
                 />
+                <div *ngIf=" hintText.invalid  && hintText.touched">
+                    <div *ngIf="hintText.errors.required">
+                      <mat-error>hint is required </mat-error></div>
+                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <label><img src="images/calendar.svg" alt="" />From</label>
-                    <input
+                    <label><img src="../../assets/images/calendar.svg" alt="" />From*</label>
+                   
+                    <mat-form-field>
+                   
+                      <input
                       type="text"
-                      class="form-control datepicker"
+                      matInput [matDatepicker]="picker"
                       name="fromDate"
-                      placeholder="dd/mm/yyyy"
                       ngModel
+                      #fromDate="ngModel" 
+                      required
                     />
-                  </div>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <div *ngIf=" fromDate.invalid  && fromDate.touched">
+                        <div *ngIf="fromDate.errors.required">
+                          <mat-error>From Date is required </mat-error></div>
+                     </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label>To</label>
                     <input
                       type="text"
@@ -47,39 +67,71 @@
                       placeholder="dd/mm/yyyy"
                       ngModel
                     />
-                  </div>
+                  </div> -->
+
+
+                  <label>To*</label>
+                   
+                  <mat-form-field>
+                 
+                    <input
+                    type="text"
+                    name="toDate"
+                    matInput [matDatepicker]="to"
+                    ngModel
+                    #toDate="ngModel"
+                    required
+                  />
+                    <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+                    <mat-datepicker #to></mat-datepicker>
+                  </mat-form-field>
+                  <div *ngIf=" toDate.invalid  && toDate.touched">
+                      <div *ngIf="toDate.errors.required">
+                        <mat-error>To Date is required </mat-error></div>
+                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <label
-                  ><img src="images/dollor.svg" alt="" />What is the
-                  budget?</label
+                  ><img src="../../assets/images/dollor.svg" alt="" />What is the
+                  budget*?</label
                 >
                 <input
                   type="text"
                   class="form-control"
                   placeholder="$"
                   id="count"
+                  name = 'tripAmount'
+                  [(ngModel)] = 'tripPrice'
+                  required
+                  #price="ngModel"
                 />
                 <div class="budget-main">
-                  <span id="one" onclick="change()">650$</span>
-                  <span id="two" onclick="change()">1000$</span>
-                  <span id="three" onclick="change()">1300$</span>
-                  <span id="four" onclick="change()">1500$</span>
-                  <span id="five" onclick="change()">2000$</span>
+                  <span *ngFor = 'let budget of tripBudget' id="one" (click)="changePrice(budget)">{{budget}}</span>
+                
                 </div>
+                <div *ngIf=" price.invalid  && price.touched">
+                    <div *ngIf="price.errors.required">
+                      <mat-error>price is required </mat-error></div>
+                 </div>
               </div>
             </form>
           </div>
+         
         </div>
       </div>
+    </mat-card>
+
     </div>
+    
     <ul class="wizard wizard-btn">
       <li class="next">
         <button
           class="next-btn"
           (click)="getCalender(plan.value)"
           matStepperNext
+          [disabled] = 'plan.invalid'
+   
         >
           Continue
         </button>
@@ -90,6 +142,8 @@
 
   
   <mat-step>
+      <ng-template matStepLabel>Set Schedule</ng-template>
+
     <div class="example-container" cdkDropListGroup>
       <div class="step-two-conatnt">
         <div class="member-box">
@@ -135,7 +189,7 @@
               (cdkDropListDropped)="drop($event)"
             >
               <h2 class="heading">
-                <img src="../../assets/images/airplane.svg" alt="" />Hotels
+                <img src="../../assets/images/hotel.svg" alt="" />Hotels
               </h2>
               <ul
               cdkDrag
@@ -161,7 +215,7 @@
             (cdkDropListDropped)="drop($event)"
           >
             <h2 class="heading">
-              <img src="../../assets/images/airplane.svg" alt="" />Attraction
+              <img src="../../assets/images/attraction.png" alt="" />Attraction
             </h2>
             <ul
             cdkDrag
@@ -189,7 +243,7 @@
                 ><img src="../../assets/images/arrow-left.png" alt=""
               /></a>
               <a href="#" class="last-btn"
-                ><img src="images/arrow-right.png" alt=""
+                ><img src="../../assets/images/arrow-right.png" alt=""
               /></a>
             </div>
             <ul class="time-items">
@@ -208,8 +262,6 @@
                   class="day-one"
                   
                 >
-
-
                   <div class="head-booking" >
                     <h3>{{trip.day}}</h3>
                     <span>{{trip.date}}</span>
@@ -218,12 +270,13 @@
                     <li
                       cdkDrag
                       [cdkDragDisabled]="trip.rowDisable"
+                      cdkDragBoundary=".main-day" 
                       *ngFor="let trip of trip.tripArrayData"
                     >
                       <a *ngIf="trip.active == true" href="#">
                         <img src="../../assets/images/plane.svg" alt="" />
                         <p>
-                          <span>{{ trip.state }}</span
+                          <span style = 'font-size: 14px'>{{ trip.state }}</span
                           ><span></span>
                         </p>
                       </a>
@@ -239,7 +292,95 @@
         </div>
       </div>
     </div>
+    <ul class="wizard wizard-btn">
+        <li class="next">
+          <button
+            class="next-btn step-back"
+            (click)="getCalender(plan.value)"
+            matStepperPrevious
+           
+          >
+            Back
+          </button>
+        </li>
+      </ul>
+    <ul class="wizard wizard-btn">
+        <li class="next">
+          <button
+            class="next-btn step-btn"
+            (click)="getCalender(plan.value)"
+            matStepperNext
+           
+          >
+            Continue
+          </button>
+        </li>
+      </ul>
   </mat-step>
-  <mat-step> </mat-step>
+  <mat-step> 
+      <ng-template matStepLabel>Your Trip</ng-template>
+      <div class="step-third">
+          <div class="step-third-inner">
+              <div class="plan-box"> <img src="../../assets/images/logo.png" alt=""> <span>My trip to Greece</span> </div>
+              <ul class="trip-detail">
+                  <li>
+                      <div class="sunday-detail">
+                          <h4>Sunday <span>26/05/19</span></h4>
+                          <p><img src="../../assets/images/red-plane.png" alt=""> From (JFk) John F.Kennedy International Airport, New York-Gate 3 at 5:25 AM (New York time)</p>
+                          <p><img src="../../assets/images/red-plane-two.png" alt="">To Santorini National Airport, Greece-Gate 3 at 09:20 PM (Greece time)<br>
+                              12th flight</p>
+                          <p><img src="../../assets/images/hotel-two.png" alt="">Apanemo hotel, Santorini.<br>
+                              150$ per night (per person)<br>
+                              Breakfast included.</p>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="sunday-detail">
+                          <h4>Monday <span>26/05/19</span></h4>
+                          <p><img src="../../assets/images/attraction-two.png" alt="">Acropolis park.<br>
+                              50$ per person. </p>
+                          <p><img src="../../assets/images/attraction-two.png" alt="">Acropolis Museum.<br>
+                              20$ per person. </p>
+                          <p><img src="../../assets/images/hotel-two.png" alt="">Lato Boutique Hotel, Santorini.<br>
+                              521$ per night (per person)<br>
+                              Breakfast included.</p>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="sunday-detail">
+                          <h4>Tuesday <span>26/05/19</span></h4>
+                          <p><img src="../../assets/images/attraction-two.png" alt="">Delphi park.<br>
+                              08$ per person.</p>
+                          <p><img src="../../assets/images/hotel-two.png" alt="">Lato Boutique Hotel, Santorini.<br>
+                              521$ per night (per person)<br>
+                              Breakfast included.</p>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="sunday-detail">
+                          <h4>Wednesday <span>26/05/19</span></h4>
+                          <p><img src="../../assets/images/red-plane.png" alt="">From Santorini National Airport, Greece-Gate 3 at 09:15 AM (Greece time)<br>
+                              12th flight</p>
+                          <p class="last-contant"><img src="../../assets/images/red-plane-two.png" alt="">To (JFk) John F.Kennedy International Airport, New York-Gate 3 at 22:25 PM (New York time)<br>
+                              13th flight. </p>
+                      </div>
+                  </li>
+              </ul>
+              
+              <a href="#" class="download-btn text-uppercase">Download Pdf</a> </div>
+          <span class="plan-togo">Plan to go</span> </div>
+          <ul class="wizard wizard-btn">
+              <li class="next">
+                <button
+                  class="next-btn step-back"
+                  (click)="getCalender(plan.value)"
+                  matStepperPrevious
+                 
+                >
+                  Back
+                </button>
+              </li>
+            </ul>
+  </mat-step>
 </mat-horizontal-stepper>
 

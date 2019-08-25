@@ -1,4 +1,4 @@
-import { Component, OnInit , EventEmitter } from '@angular/core';
+import { Component, OnInit , EventEmitter , ChangeDetectorRef } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import * as moment from 'moment';
 
@@ -16,6 +16,9 @@ export class PlanTripComponent implements OnInit {
 dateDiff: number ;
 LIST_IDS = [] ;
 tripObj = [];
+tripPrice: string ;
+isLinear = true;
+tripBudget = [550 , 650 , 800 , 1200 , 1600 ];
   tripPlan = [{
     flightName: [
     { id: 1, state: 'Costa Marina Villas', amount: 450 },
@@ -36,12 +39,19 @@ tripObj = [];
 
 
 
-  constructor() { }
+  constructor(public cd : ChangeDetectorRef) { }
   ngOnInit() {
      this.getTripData();
   }
   timeChange(data) {
 console.log(data);
+  }
+
+  changePrice(p) {
+    this.tripPrice = p + '$'  ;
+    console.log(this.tripPrice);
+    this.cd.detectChanges();
+
   }
 
   getIndex(i) {
@@ -99,6 +109,7 @@ drop( event: CdkDragDrop<string[]> ) {
 
       console.log('Previous =' ,  event.previousIndex);
       console.log('currentIndex =' ,  event.currentIndex , );
+      if(event.currentIndex<=23){
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
@@ -110,15 +121,19 @@ drop( event: CdkDragDrop<string[]> ) {
       const timeObj = container.tripArrayData[event.currentIndex + 1] ;
       obj.active =  true ;
       obj.rowDisable = false ;
+      obj.id = event.currentIndex;
       // console.log(event.container.id);
 
       container.tripArrayData[event.currentIndex] =  {...timeObj , ...obj} ;
 
       container.tripArrayData.splice(event.currentIndex + 1 , 1);
 
+        console.log(container.tripArrayData );
+        console.log('currentIndex' , event.currentIndex );
 
 
     }
+  }
   }
 
 }

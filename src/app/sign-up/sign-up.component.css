@@ -1,0 +1,39 @@
+.signup-button{
+  height: 44px;
+  width: 125px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9b9da2;
+  text-transform: uppercase;
+  color: #fff !important;
+  border-radius: 100px;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+.mat-form-field {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  width: 94%;
+}
+
+.center{
+  margin-left: auto;
+  margin-bottom: auto;
+  width: 50%;
+  position: relative;
+}
+
+
+.mat-radio-button {
+  
+  margin-bottom: 15px;
+}
+.form-main .form-control {
+  
+
+  font-size: 15px;
+
+}

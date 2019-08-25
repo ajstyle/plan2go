@@ -4,3 +4,36 @@
     width: 50%;
     
 }
+.mat-error {
+  
+  font-size: 15px;
+}
+
+a {
+  color: #9B9DA2 !important;
+  font-weight: 600 ; 
+  position: relative;
+    top: 14px;
+
+}
+.login-button{
+  height: 44px;
+  width: 125px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9b9da2;
+  text-transform: uppercase;
+  color: #fff !important;
+  border-radius: 100px;
+  font-weight: 300;
+  font-size: 17px;
+
+}
+
+.form-main .form-control {
+  
+
+  font-size: 15px;
+
+}

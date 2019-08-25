@@ -7,7 +7,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 const routes: Routes = [
   
   {
-    path : 'login',
+    path : '',
     component: LoginComponent
   },
   {
@@ -15,7 +15,8 @@ const routes: Routes = [
     component: SignUpComponent
   },
   {
-    path : '',
+    path : 'planTrip',
+    
     component: PlanTripComponent
   }
 ];
